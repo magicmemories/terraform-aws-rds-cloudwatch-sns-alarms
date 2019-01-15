@@ -3,6 +3,12 @@ variable "db_instance_id" {
   type        = "string"
 }
 
+variable "source_type" {
+  description = "The type of source that will be generating the events. Valid options are db-instance, db-security-group, db-parameter-group, db-snapshot, db-cluster or db-cluster-snapshot. If not set, all sources will be subscribed to."
+  type        = "string"
+  default     = "db-instance"
+}
+
 variable "burst_balance_threshold" {
   description = "The minimum percent of General Purpose SSD (gp2) burst-bucket I/O credits available."
   type        = "string"

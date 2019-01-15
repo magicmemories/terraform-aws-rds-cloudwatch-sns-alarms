@@ -16,7 +16,7 @@ resource "aws_db_event_subscription" "default" {
   name_prefix = "rds-event-sub"
   sns_topic   = "${aws_sns_topic.default.arn}"
 
-  source_type = "db-instance"
+  source_type = "${var.source_type}"
   source_ids  = ["${var.db_instance_id}"]
 
   event_categories = [
